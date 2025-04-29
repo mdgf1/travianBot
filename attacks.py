@@ -73,6 +73,7 @@ def attack_oasis(driver, config_values):
                     hourse_input.send_keys(config_values["min_troops_b"])
                 else:
                     oasis.insert(0, (x, y))
+                    oasis.extend(config_values["oasis"])
                     break
         except Exception:
             try:
@@ -84,10 +85,12 @@ def attack_oasis(driver, config_values):
                     hourse_input.send_keys(config_values["min_troops_b"])
                 else:
                     oasis.insert(0, (x, y))
+                    oasis.extend(config_values["oasis"])
                     break
             except Exception:
                 print(traceback.format_exc())
                 oasis.insert(0, (x, y))
+                oasis.extend(config_values["oasis"])
                 break
 
         random_sleep()
@@ -146,7 +149,7 @@ def attack_natares(driver, config_values):
         random_sleep()
 
         try:
-            max_troops = driver.find_element(By.CSS_SELECTOR, 'a[onclick*="troop[t1]"]').text
+            max_troops = driver.find_element(By.CSS_SELECTOR, 'a[onclick*="troop[t1]"]').text                
             max_troops = max_troops.replace('\u202d', '')
             max_troops = max_troops.replace('\u202c', '')
             if int(max_troops) >= int(config_values["min_troops_a"]):
@@ -160,12 +163,26 @@ def attack_natares(driver, config_values):
                     hourse_input = driver.find_element(By.CSS_SELECTOR, "#troops > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > input:nth-child(2)")
                     hourse_input.send_keys(config_values["min_troops_b"])
                 else:
-                    raise Exception("Not enough troops")
-
+                    natares.insert(0, (x, y))
+                    natares.extend(config_values["natares"])
+                    break
         except Exception:
-            print(traceback.format_exc())
-            natares.insert(0, (x, y))
-            break
+            try:
+                max_troops = driver.find_element(By.CSS_SELECTOR, 'a[onclick*="troop[t5]"]').text
+                max_troops = max_troops.replace('\u202d', '')
+                max_troops = max_troops.replace('\u202c', '')
+                if int(max_troops) >= int(config_values["min_troops_b"]):
+                    hourse_input = driver.find_element(By.CSS_SELECTOR, "#troops > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > input:nth-child(2)")
+                    hourse_input.send_keys(config_values["min_troops_b"])
+                else:
+                    natares.insert(0, (x, y))
+                    natares.extend(config_values["natares"])
+                    break
+            except Exception:
+                print(traceback.format_exc())
+                natares.insert(0, (x, y))
+                natares.extend(config_values["natares"])
+                break
 
         random_sleep()
         try:

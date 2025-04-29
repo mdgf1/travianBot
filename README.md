@@ -13,7 +13,7 @@ isto é util para auto evoluir recursos e auto atacar oasis e natares que quiser
 7. Deve ser isso, se n correr pode ser porque há um problema qualquer com o selenium e o firefox os proximos passos é só se tiverem esse problema
 8. Têm que fazer download de uma cena chamada geckodriver, extrair o ficheiro para o windows do git que aparece primeiro no google e meter num sitio que saibam o caminho para tipo ``` C:\Users\username\Documents ``` coisa simples assim
 9. Vão a edit system environment variables no windows (pesquisar isto na lupa do windows), environment variables, em system variables clicar no path, clicar em edit, new, adicionar ``` C:\Users\username\Documents\pastaDoGeckodriver ```
-10. Correr o bot de novo se n der é chorar e ver o erro que deu idk
+10. Correr o bot de novo se n der é chorar e ver o erro que deu idk maybe meter o geckodriver em vez do que esta na pasta travianBot mesmo
 
 # Como Usar
 

@@ -111,6 +111,8 @@ def attack_oasis(driver, config_values):
 
     config_values["oasis"] = oasis
     driver.find_element(By.CSS_SELECTOR, "a.village:nth-child(1)").click()
+    return config_values["oasis"]
+
 
 def attack_natares(driver, config_values):
     actionChains = ActionChains(driver)
@@ -202,6 +204,8 @@ def attack_natares(driver, config_values):
 
     config_values["natares"] = natares
     driver.find_element(By.CSS_SELECTOR, "a.village:nth-child(1)").click()
+    return config_values["natares"]
+
 
         
 

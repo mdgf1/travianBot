@@ -17,7 +17,7 @@ isto é util para auto evoluir recursos e auto atacar oasis e natares que quiser
 
 # Como Usar
 
-Se abrirem a pasta que é descarregada ao fazer ``` git clone https://github.com/mdgf1/travianBot.git ``` vai haver um ficheiro de texto chamado config.ini, nesse ficheiro têm que mudar os valores das coisas todas para as vossas, os oasis sao os meus num raio de 11 por 11 e as credenciais tambem (acabei de perceber que fiz upload da minha passe para o git vou ter de mudar isso ops).
+Se abrirem a pasta que é descarregada ao fazer ``` git clone https://github.com/mdgf1/travianBot.git ``` vai haver um ficheiro de texto chamado config.ini, nesse ficheiro têm que mudar os valores das coisas todas para as vossas, os oasis sao os meus num raio de 11 por 11 e as credenciais tambem (acabei de perceber que fiz upload da minha passe para o git vou ter de mudar isso ops). O valor de windowless é 0 ou 1, se for 1 o bot corre no background e n abre nada, mas recomendo correr pelo menos umas vezes com window para ver se esta tudo a correr fixe.
 
 Dps podem fazer essencialmente 4 comandos:
 

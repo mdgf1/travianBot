@@ -29,6 +29,8 @@ def read_config():
 
     min_troops_b = config.get('user_info', 'min_troops_b')
     
+    windowless = config.getboolean('user_info', 'windowless')
+
 
     config_values = {
         'email': email,
@@ -37,7 +39,8 @@ def read_config():
         'natares': natares,
         'towns': towns,
         'min_troops_a': min_troops_a,
-        'min_troops_b': min_troops_b
+        'min_troops_b': min_troops_b, 
+        'windowless': windowless
     }
     return extract_farm_pairs(config_values)
 

@@ -37,9 +37,11 @@ def login(driver, config_values):
 
 def main():
     opts = Options()
-    #opts.add_argument("--headless")
-    driver = webdriver.Firefox(options=opts)
     config_values = read_config()
+    if (config_values["windowless"]):
+        opts.add_argument("--headless")
+
+    driver = webdriver.Firefox(options=opts)
 
     driver.get("https://ts8.x1.europe.travian.com/")
     delay = 3

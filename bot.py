@@ -58,12 +58,14 @@ def main():
                 evolveCrops(driver, a_crops)
             except Exception:
                 print(traceback.format_exc())
+                random_sleep()
                 driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
                 random_sleep()
         if auto_main:
             try:
                 evolveMain(driver)
             except Exception:
+                random_sleep()
                 print(traceback.format_exc())
                 random_sleep()
         if random.choice([True, False]):
@@ -72,6 +74,7 @@ def main():
                     config_values["oasis"] = attack_oasis(driver, config_values)
                 except Exception:
                     print(traceback.format_exc())
+                    random_sleep()
                     driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
                     random_sleep()
             if auto_natares:
@@ -79,6 +82,7 @@ def main():
                     config_values["natares"] = attack_natares(driver, config_values)
                 except Exception:
                     print(traceback.format_exc())
+                    random_sleep()
                     driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
                     random_sleep()
         else:
@@ -87,6 +91,7 @@ def main():
                     config_values["natares"] = attack_natares(driver, config_values)
                 except Exception:
                     print(traceback.format_exc())
+                    random_sleep()
                     driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
                     random_sleep()
             if auto_oasis:
@@ -94,6 +99,7 @@ def main():
                     config_values["oasis"] = attack_oasis(driver, config_values)
                 except Exception:
                     print(traceback.format_exc())
+                    random_sleep()
                     driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
                     random_sleep()
 

@@ -53,57 +53,60 @@ def main():
     login(driver, config_values)
     
     while 1:
-        if a_crops != 0:
-            try:
-                evolveCrops(driver, a_crops)
-            except Exception:
-                print(traceback.format_exc())
-                random_sleep()
-                driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
-                random_sleep()
-        if auto_main:
-            try:
-                evolveMain(driver)
-            except Exception:
-                random_sleep()
-                print(traceback.format_exc())
-                random_sleep()
-        if random.choice([True, False]):
-            if auto_oasis:
+        try:
+            if a_crops != 0:
                 try:
-                    config_values["oasis"] = attack_oasis(driver, config_values)
+                    evolveCrops(driver, a_crops)
                 except Exception:
                     print(traceback.format_exc())
                     random_sleep()
                     driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
                     random_sleep()
-            if auto_natares:
+            if auto_main:
                 try:
-                    config_values["natares"] = attack_natares(driver, config_values)
+                    evolveMain(driver)
                 except Exception:
+                    random_sleep()
                     print(traceback.format_exc())
                     random_sleep()
-                    driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
-                    random_sleep()
-        else:
-            if auto_natares:
-                try:
-                    config_values["natares"] = attack_natares(driver, config_values)
-                except Exception:
-                    print(traceback.format_exc())
-                    random_sleep()
-                    driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
-                    random_sleep()
-            if auto_oasis:
-                try:
-                    config_values["oasis"] = attack_oasis(driver, config_values)
-                except Exception:
-                    print(traceback.format_exc())
-                    random_sleep()
-                    driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
-                    random_sleep()
+            if random.choice([True, False]):
+                if auto_oasis:
+                    try:
+                        config_values["oasis"] = attack_oasis(driver, config_values)
+                    except Exception:
+                        print(traceback.format_exc())
+                        random_sleep()
+                        driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
+                        random_sleep()
+                if auto_natares:
+                    try:
+                        config_values["natares"] = attack_natares(driver, config_values)
+                    except Exception:
+                        print(traceback.format_exc())
+                        random_sleep()
+                        driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
+                        random_sleep()
+            else:
+                if auto_natares:
+                    try:
+                        config_values["natares"] = attack_natares(driver, config_values)
+                    except Exception:
+                        print(traceback.format_exc())
+                        random_sleep()
+                        driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
+                        random_sleep()
+                if auto_oasis:
+                    try:
+                        config_values["oasis"] = attack_oasis(driver, config_values)
+                    except Exception:
+                        print(traceback.format_exc())
+                        random_sleep()
+                        driver.find_element(by=By.CSS_SELECTOR, value="a.village:nth-child(1)").click()
+                        random_sleep()
 
-        time.sleep(random.uniform(min_seconds, max_seconds))
+            time.sleep(random.uniform(min_seconds, max_seconds))
+        except Exception:
+            pass
         
 
 

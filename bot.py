@@ -19,8 +19,8 @@ a_crops = 0
 auto_main = False
 auto_oasis = False
 auto_natares = False
-min_seconds = 60
-max_seconds = 180
+min_seconds = 30
+max_seconds = 60
 
 def login(driver, config_values):
     email_text_box = driver.find_element(by=By.CSS_SELECTOR, value="label.input:nth-child(1) > input:nth-child(1)")
@@ -106,7 +106,7 @@ def main():
 
             time.sleep(random.uniform(min_seconds, max_seconds))
         except Exception:
-            pass
+            driver.get("https://ts8.x1.europe.travian.com/dorf1.php")
         
 
 

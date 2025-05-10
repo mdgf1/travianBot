@@ -14,7 +14,17 @@ def upgradeLowestResource(driver, resources):
     for res in resources:
         if "underConstruction" in res.get_attribute("class").split():
             continue
-        level = int(res.find_element(By.CSS_SELECTOR, ".labelLayer").text)
+        try:
+            level = int(res.find_element(By.CSS_SELECTOR, ".labelLayer").text)
+        except Exception:
+            res.click()
+            random_sleep()
+            try:
+                btn = driver.find_element(By.CSS_SELECTOR, ".upgradeButtonsContainer .section1 button.build")
+                btn.click()
+            except NoSuchElementException:
+                driver.find_element(By.CSS_SELECTOR, "a.village:nth-child(1)").click()
+            return
         if level < min_level:
             min_level = level
             target = res

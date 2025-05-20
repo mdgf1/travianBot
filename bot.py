@@ -19,8 +19,8 @@ a_crops = 0
 auto_main = False
 auto_oasis = False
 auto_natares = False
-min_seconds = 360
-max_seconds = 440
+min_seconds = 300
+max_seconds = 360
 
 def login(driver, config_values):
     email_text_box = driver.find_element(by=By.CSS_SELECTOR, value="label.input:nth-child(1) > input:nth-child(1)")
